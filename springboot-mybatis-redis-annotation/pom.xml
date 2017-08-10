@@ -18,7 +18,7 @@
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
 		<mybatisplus-spring-boot-starter.version>1.0.4</mybatisplus-spring-boot-starter.version>
-		<mybatisplus.version>2.1-gamma</mybatisplus.version>
+		<mybatisplus.version>2.0.8</mybatisplus.version>
 	</properties>
 
 	<!-- Spring Boot 启动父依赖 -->
