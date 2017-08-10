@@ -81,7 +81,7 @@ public class UserController {
      * 处理 "/users/{id}" 的 GET 请求，用来删除 User 信息
      */
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
-    public String deleteUser(@PathVariable Long id) {
+    public String deleteUser(@PathVariable String id) {
         userService.deleteById(id);
         return "redirect:/users/";
     }
