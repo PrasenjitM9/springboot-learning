@@ -97,4 +97,5 @@ mybatis-plus:
     cache-enabled: false
 #logging
 logging:
+  config： classpath:log4j2.xml
   level: info
