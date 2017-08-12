@@ -54,6 +54,20 @@ spring:
     # 连接超时时间（毫秒）
     spring.redis.timeout: 0
 
+  mail: 
+  # Email (MailProperties)
+    default-encoding: UTF-8
+    host: smtp.qq.com
+    password: 
+    port: 25
+    protocol: smtp
+    test-connection: false
+    username: 550491172@qq.com
+    properties.mail.smtp.auth: true
+    properties.mail.smtp.starttls.enable: true
+    properties.mail.transport.protocol: smtps
+    properties.mail.smtps.quitwait: false
+  
 #mybatis
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Mapper.xml
