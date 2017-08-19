@@ -4,6 +4,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * Spring Boot 应用启动类
@@ -15,6 +16,7 @@ import org.springframework.cache.annotation.EnableCaching;
 //mapper 接口类扫描包配置
 @MapperScan("org.spring.springboot.mapper")
 @EnableCaching
+@EnableScheduling
 public class Application {
 
     public static void main(String[] args) throws Exception {
