@@ -11,6 +11,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 
@@ -39,4 +40,17 @@ public class UserServiceImpl  extends ServiceImpl<UserMapper, User>  implements 
 		return super.updateById(user);
 	}
 	
+	@Transactional
+	public void testTransactional() {
+		User user = new User();
+		user.setName("事务测试");
+		user.setAge(10);
+		user.setBirthday("2017-08-19");		
+		insert(user);
+		User user2 = new User();
+		user2.setName("事务测试2");
+		user2.setAge(10);
+		user2.setBirthday("2017-08-19");			
+		insert(user2);
+	}
 }
