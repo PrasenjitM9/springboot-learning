@@ -2,7 +2,7 @@
 <configuration status="warn">
     <properties>
 
-        <Property name="app_name">springboot-mybatis-redis-annotation</Property>
+        <Property name="app_name">springboot-base</Property>
         <Property name="log_path">logs/${app_name}</Property>
 
     </properties>

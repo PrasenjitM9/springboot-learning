@@ -1,9 +1,8 @@
 Manifest-Version: 1.0
-Implementation-Title: springboot-mybatis-redis-annotation :: 注解实
- 现整合 Redis 作为缓存
+Implementation-Title: springboot-base
 Implementation-Version: 0.0.1-SNAPSHOT
 Built-By: wangjian
-Implementation-Vendor-Id: springboot
+Implementation-Vendor-Id: cn.bocon
 Build-Jdk: 1.8.0_112
 Implementation-URL: http://maven.apache.org
 Created-By: Maven Integration for Eclipse
