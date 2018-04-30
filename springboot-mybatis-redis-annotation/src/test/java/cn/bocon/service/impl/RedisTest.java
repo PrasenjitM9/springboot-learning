@@ -1,10 +1,9 @@
 package cn.bocon.service.impl;
 
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -18,7 +17,7 @@ import com.baomidou.mybatisplus.mapper.Wrapper;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 public class RedisTest {
-	private Logger logger = LogManager.getLogger(getClass());
+	private org.slf4j.Logger logger = LoggerFactory.getLogger(getClass());
 	@Autowired
 	private IUserService userService;
 
