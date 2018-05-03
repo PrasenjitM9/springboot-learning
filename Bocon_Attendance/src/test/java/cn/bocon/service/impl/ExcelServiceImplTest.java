@@ -28,7 +28,8 @@ public class ExcelServiceImplTest {
 		Map<String, Object> beans = Maps.newHashMap();
 		beans.put("records", datas);
 		
-		excelService.export("考勤记录表.xls", beans, "D:\\天河公司打卡记录（处理后）.xls");
+		String fileName = "D:\\2018年3月份博控打卡记录（处理后）.xls";
+		excelService.export("考勤记录表.xls", beans, fileName);
 	}
 
 }
