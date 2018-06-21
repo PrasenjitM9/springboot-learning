@@ -7,8 +7,10 @@ spring:
   devtools:
     restart:
       enabled: false
+  thymeleaf:
+      cache: false
 
-  # H2 DATABASE CONFIG
+  # datasource CONFIG
   datasource:
     continueOnError: true
     type: com.alibaba.druid.pool.DruidDataSource

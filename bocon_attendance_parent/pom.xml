@@ -15,7 +15,7 @@
     <version>1.0</version>
     <packaging>pom</packaging>
 
-    <name>Bocon_Attendance_parent</name>
+    <name>bocon_attendance_parent</name>
     <url>http://maven.apache.org</url>
     
     <properties>
@@ -29,6 +29,7 @@
         <druid.version>1.0.20</druid.version>
         <guava.version>19.0</guava.version>
     </properties>
+    
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -167,7 +168,23 @@
 			<artifactId>sqljdbc4</artifactId>
 			<version>4.0</version>
 		</dependency>
-		     		
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+        
+ 		<!-- common -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>	
+		
+        <!-- MySQL 连接驱动依赖 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>		       
     </dependencies>
     
     <dependencyManagement>
@@ -187,7 +204,7 @@
     </dependencyManagement>
 
     <build>
-        <finalName>bocon-wq-parent</finalName>
+        <finalName>bocon_attendance_parent</finalName>
 
         <plugins>
             <plugin>
@@ -212,6 +229,6 @@
 
     <!-- multiple Module -->
     <modules>
-        <module>../bocon-wq-server</module>
+        <module>../bocon_attendance_service</module>
     </modules>
 </project>
