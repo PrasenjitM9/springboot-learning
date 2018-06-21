@@ -60,7 +60,7 @@ public class MpGenerator {
         dsc.setDbType(DbType.MYSQL);
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername("root");
-        dsc.setPassword("bocon123");
+        dsc.setPassword("root");
         dsc.setUrl("jdbc:mysql://localhost:3306/bocon_attendance?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true");
         mpg.setDataSource(dsc);
 
