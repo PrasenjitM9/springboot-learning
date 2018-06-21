@@ -2,7 +2,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>springboot</groupId>
+	<parent>
+		<groupId>cn.bocon</groupId>
+		<artifactId>bocon_attendance_parent</artifactId>
+		<version>1.0</version>
+		<relativePath>../bocon_attendance_parent/pom.xml</relativePath>
+	</parent>
+
 	<artifactId>Bocon_Attendance</artifactId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
@@ -21,13 +27,6 @@
 		<mybatisplus.version>2.0.8</mybatisplus.version>
 		<netty.version>4.1.13.Final</netty.version>
 	</properties>
-
-	<!-- Spring Boot 启动父依赖 -->
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.6.RELEASE</version>
-	</parent>
 
 	<dependencies>
         <!-- Spring Boot Data Cache 依赖 -->
