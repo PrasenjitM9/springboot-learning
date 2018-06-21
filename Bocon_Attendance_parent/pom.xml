@@ -9,12 +9,13 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.5.9.RELEASE</version>
     </parent>
+    
     <groupId>cn.bocon</groupId>
-    <artifactId>bocon-wq-parent</artifactId>
+    <artifactId>bocon_attendance_parent</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
 
-    <name>bocon-wq-parent</name>
+    <name>Bocon_Attendance_parent</name>
     <url>http://maven.apache.org</url>
     
     <properties>
