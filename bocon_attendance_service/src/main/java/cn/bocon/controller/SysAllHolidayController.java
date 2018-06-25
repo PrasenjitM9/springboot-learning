@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  *  前端控制器
  * </p>
  *
- * @author linxiaoqiang
+ * @author wj
  * @since 2017-10-27
  */
 @Controller

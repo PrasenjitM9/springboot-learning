@@ -12,8 +12,6 @@ import net.sf.jxls.transformer.XLSTransformer;
 @Service
 public class ExcelServiceImpl implements IExcelService {
 
-	
-	
     /**
      * 
      * @param templateFileName 模板名称
@@ -21,7 +19,7 @@ public class ExcelServiceImpl implements IExcelService {
      * @param destFileName
      * @throws Exception
      */
-    public void export(String templateFileName, Map<String, Object> beans, String destFileName) throws Exception {
+    public String export(String templateFileName, Map<String, Object> beans, String destFileName) throws Exception {
     	try {
 	  		  XLSTransformer transformer = new XLSTransformer();
 	  		  //拼接路径
@@ -32,7 +30,7 @@ public class ExcelServiceImpl implements IExcelService {
 			e.printStackTrace();
 			throw e;
 		}
+    	return destFileName;
     }
-    
     
 }

@@ -1,7 +1,11 @@
 package cn.bocon.service;
 
-import cn.bocon.entity.CardData;
+import java.util.Date;
+import java.util.List;
+
 import com.baomidou.mybatisplus.service.IService;
+
+import cn.bocon.entity.CardData;
 
 /**
  * <p>
@@ -13,4 +17,5 @@ import com.baomidou.mybatisplus.service.IService;
  */
 public interface ICardDataService extends IService<CardData> {
 
+	List<CardData> selectByUserIdAndTime(String userId, Date beginTime, Date endTime);
 }

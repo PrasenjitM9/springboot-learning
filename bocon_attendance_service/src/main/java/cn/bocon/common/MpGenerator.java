@@ -68,7 +68,7 @@ public class MpGenerator {
         StrategyConfig strategy = new StrategyConfig();
         strategy.setTablePrefix(new String[]{"test_"});// 此处可以修改为您的表前缀
         strategy.setNaming(NamingStrategy.underline_to_camel);// 表名生成策略
-        strategy.setInclude(new String[] { "card_data"
+        strategy.setInclude(new String[] { "emp"
         }); // 需要生成的表
         // strategy.setExclude(new String[]{"test"}); // 排除生成的表
         // 字段名生成策略
