@@ -128,7 +128,25 @@ public class FileServiceImpl implements IFileService {
 							cardDataService.deleteById(first.getId());
 						}
 						
-					}					
+					} else if (cardDatas != null && cardDatas.size() == 2) {
+						CardData first = cardDatas.get(0);
+						CardData last = cardDatas.get(1);	
+						Date firtCardTime = first.getCardTime();
+						Date lastCardTime = last.getCardTime();		
+						Calendar firstcalendar = Calendar.getInstance();
+						firstcalendar.setTime(lastCardTime);
+						int beginHour = firstcalendar.get(Calendar.HOUR_OF_DAY);
+						
+						Calendar lastcalendar = Calendar.getInstance();
+						lastcalendar.setTime(lastCardTime);
+						int lastHour = lastcalendar.get(Calendar.HOUR_OF_DAY);						
+						long minute = DateUtil.getMinDistanceTimes(DateUtil.formatDateTime(firtCardTime), DateUtil.formatDateTime(lastCardTime));
+						if (Math.abs(minute) <= 5 && lastHour < 13) { //上午
+							cardDataService.deleteById(last.getId());
+						} else if (Math.abs(minute) <= 5 && beginHour > 12) { //下午
+							cardDataService.deleteById(first.getId());
+						}						
+					}
 				}
 			}
 		}
