@@ -6,16 +6,16 @@
 
 	<parent>
 		<groupId>cn.bocon</groupId>
-		<artifactId>bocon-wq-parent</artifactId>
+		<artifactId>bocon-export-parent</artifactId>
 		<version>1.0</version>
-		<relativePath>../bocon-wq-parent/pom.xml</relativePath>
+		<relativePath>../bocon-export-parent/pom.xml</relativePath>
 	</parent>
 
-	<artifactId>bocon-wq-server</artifactId>
+	<artifactId>bocon-export-server</artifactId>
 	<version>1.0.0-releases</version>
 	<packaging>jar</packaging>
 	
-	<name>bocon-wq-server</name>
+	<name>bocon-export-server</name>
 	<url>http://maven.apache.org</url>
 	
 	<dependencies>
@@ -31,7 +31,7 @@
 	</dependencies>
 
     <build>
-    	<finalName>bocon-wq-server</finalName>  
+    	<finalName>bocon-export-server</finalName>  
         <plugins>
             <!-- Spring Boot Maven 插件 -->
             <plugin>

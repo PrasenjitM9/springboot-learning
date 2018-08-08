@@ -10,11 +10,11 @@
         <version>1.5.9.RELEASE</version>
     </parent>
     <groupId>cn.bocon</groupId>
-    <artifactId>bocon-wq-parent</artifactId>
+    <artifactId>bocon-export-parent</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
 
-    <name>bocon-wq-parent</name>
+    <name>bocon-export-parent</name>
     <url>http://maven.apache.org</url>
     
     <properties>
@@ -186,7 +186,7 @@
     </dependencyManagement>
 
     <build>
-        <finalName>bocon-wq-parent</finalName>
+        <finalName>bocon-export-parent</finalName>
 
         <plugins>
             <plugin>
@@ -211,6 +211,6 @@
 
     <!-- multiple Module -->
     <modules>
-        <module>../bocon-wq-server</module>
+        <module>../bocon-export-server</module>
     </modules>
 </project>

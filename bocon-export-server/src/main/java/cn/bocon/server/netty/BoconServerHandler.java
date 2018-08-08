@@ -72,9 +72,9 @@ public class BoconServerHandler extends SimpleChannelInboundHandler<String> {
 		Map<String, Object> parsedMap = DataPackageUtils.parse(msg);
 		String dataTime = (String)parsedMap.get("DataTime"); //数据时间
 		String cn = (String)parsedMap.get("CN"); //命令编码
-		if ("2011".equals(cn)) {
+/*		if ("2011".equals(cn)) {
 			ctx.writeAndFlush("ok" + dataTime + "\r\n");
-		}
+		}*/
 		
 		HttpClient httpclient = HttpClients.custom().build();
 		HttpPost httpPost = new HttpPost("http://localhost:" + webPort + "/dataCenter/resolve"); //解析实时数据
