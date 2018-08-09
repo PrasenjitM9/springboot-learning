@@ -28,6 +28,7 @@
         <druid.version>1.0.20</druid.version>
         <guava.version>19.0</guava.version>
     </properties>
+    
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -51,12 +52,6 @@
         </dependency>
         
         <dependency>
-            <groupId>com.lmax</groupId>
-            <artifactId>disruptor</artifactId>
-            <version>3.3.4</version>
-        </dependency>
-
-        <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
         </dependency>
@@ -73,12 +68,6 @@
 			<artifactId>guava</artifactId>
 			<version>${guava.version}</version>
 		</dependency>
-		
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>druid</artifactId>
-			<version>${druid.version}</version>
-		</dependency>      
 		
 		<!-- 模板引擎 -->
 		<dependency>
@@ -98,23 +87,6 @@
 			<artifactId>netty-all</artifactId>
 			<version>${netty.version}</version>
 		</dependency>	
-		
-		<!-- mybatis-plus begin -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jdbc</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.baomidou</groupId>
-			<artifactId>mybatisplus-spring-boot-starter</artifactId>
-			<version>${mybatisplus-spring-boot-starter.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.baomidou</groupId>
-			<artifactId>mybatis-plus</artifactId>
-			<version>${mybatisplus.version}</version>
-		</dependency>
-		<!-- mybatis-plus end -->	
 		
         <!-- 模板引擎 Thymeleaf 依赖 -->
         <dependency>
@@ -161,12 +133,6 @@
 		    <artifactId>h2</artifactId>
 		</dependency>
 		
-		<dependency>
-			<groupId>com.microsoft.sqlserver</groupId>
-			<artifactId>sqljdbc4</artifactId>
-			<version>4.0</version>
-		</dependency>
-		     		
     </dependencies>
     
     <dependencyManagement>

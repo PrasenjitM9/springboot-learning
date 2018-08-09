@@ -3,7 +3,6 @@ package cn.bocon.server;
 import java.io.File;
 import java.net.InetSocketAddress;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
@@ -17,7 +16,6 @@ import io.netty.channel.ChannelFuture;
 
 @SpringBootApplication
 //mapper 接口类扫描包配置
-@MapperScan("cn.bocon.server.mapper")
 @EnableScheduling
 public class NettyServerApplication implements CommandLineRunner{
 	@Autowired

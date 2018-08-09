@@ -92,7 +92,7 @@ public class RtdServiceImpl implements IRtdService, IResolveService {
 				for (int i = 0; i < polList.size(); i++) {
 					String polCode = polList.get(i);
 					String polName = polMap.get(polCode);
-					if (StringUtils.isEmpty(polName)) {
+					if (StringUtils.isNotEmpty(polName)) {
 						sbHead.append(polName);
 					} else {
 						sbHead.append("");
