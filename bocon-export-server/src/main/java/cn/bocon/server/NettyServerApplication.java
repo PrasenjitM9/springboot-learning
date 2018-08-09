@@ -1,7 +1,6 @@
 package cn.bocon.server;
 
-import io.netty.channel.ChannelFuture;
-
+import java.io.File;
 import java.net.InetSocketAddress;
 
 import org.mybatis.spring.annotation.MapperScan;
@@ -14,6 +13,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 import cn.bocon.server.netty.BoconServer;
+import io.netty.channel.ChannelFuture;
 
 @SpringBootApplication
 //mapper 接口类扫描包配置
@@ -38,6 +38,23 @@ public class NettyServerApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
+		File file = new File("D:\\rtd_data.csv");
+		if (file.exists()) {
+			file.delete();
+		}
+		file = new File("D:\\minute_data.csv");
+		if (file.exists()) {
+			file.delete();
+		}
+		file = new File("D:\\hour_data.csv");
+		if (file.exists()) {
+			file.delete();
+		}
+		file = new File("D:\\day_data.csv");
+		if (file.exists()) {
+			file.delete();
+		}
+		
 		InetSocketAddress address = new InetSocketAddress(port);
 		ChannelFuture future = boconServer.start(address, webPort);
 		

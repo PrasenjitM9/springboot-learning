@@ -21,6 +21,7 @@ import cn.bocon.server.common.Constants;
 import cn.bocon.server.common.DataPackageUtils;
 import cn.bocon.server.common.DateUtils;
 import cn.bocon.server.common.RegexUtils;
+import cn.bocon.server.service.IHisService;
 import cn.bocon.server.service.IResolveService;
 import cn.bocon.server.service.IRtdService;
 
@@ -30,6 +31,8 @@ public class DataCenterController {
 	private Logger logger = LoggerFactory.getLogger(DataCenterController.class);
 	@Autowired
 	private IRtdService rtdService;	
+	@Autowired
+	private IHisService hisService;
 	@Value("${bocon.checkCrc}")
 	private String checkCrc;
 	@Value("${bocon.checkValidDate}")
@@ -78,8 +81,22 @@ public class DataCenterController {
 			return null;
 		}
 		String cn = RegexUtils.getString(msg, "CN=(\\w+);");
-		if ("2011".equals(cn)) { //实时数据
-			resolveService = rtdService;
+		switch (cn) {
+			case "2011":
+				resolveService = rtdService; //实时数据
+				break;
+			case "2051":
+				resolveService = hisService; //分钟数据
+				break;
+			case "2061":
+				resolveService = hisService; //小时数据
+				break;
+			case "2031":
+				resolveService = hisService; //日数据
+				break;				
+	
+			default:
+				break;
 		}
 		if (resolveService != null) {
 			resolveService.resolve(msg);
