@@ -36,6 +36,23 @@ public class NettyServerApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
+		init();
+		
+		InetSocketAddress address = new InetSocketAddress(port);
+		ChannelFuture future = boconServer.start(address, webPort);
+		
+		Runtime.getRuntime().addShutdownHook(new Thread(){
+			@Override
+			public void run() {
+				boconServer.destroy();
+			}
+		});
+		
+		future.channel().closeFuture().syncUninterruptibly();
+	}
+	
+	//初始删除文件
+	public void init() {
 		File file = new File("D:\\rtd_data.csv");
 		if (file.exists()) {
 			file.delete();
@@ -52,17 +69,9 @@ public class NettyServerApplication implements CommandLineRunner{
 		if (file.exists()) {
 			file.delete();
 		}
-		
-		InetSocketAddress address = new InetSocketAddress(port);
-		ChannelFuture future = boconServer.start(address, webPort);
-		
-		Runtime.getRuntime().addShutdownHook(new Thread(){
-			@Override
-			public void run() {
-				boconServer.destroy();
-			}
-		});
-		
-		future.channel().closeFuture().syncUninterruptibly();
+		file = new File("D:\\month_data.csv");
+		if (file.exists()) {
+			file.delete();
+		}			
 	}
 }

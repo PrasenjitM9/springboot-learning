@@ -11,7 +11,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpEntity;
@@ -69,12 +68,9 @@ public class BoconServerHandler extends SimpleChannelInboundHandler<String> {
   
 		logger.warn(DateUtils.getCurrentTimeString() + " " + msg);
 		//解析时间
-		Map<String, Object> parsedMap = DataPackageUtils.parse(msg);
-		String dataTime = (String)parsedMap.get("DataTime"); //数据时间
-		String cn = (String)parsedMap.get("CN"); //命令编码
-/*		if ("2011".equals(cn)) {
-			ctx.writeAndFlush("ok" + dataTime + "\r\n");
-		}*/
+		//Map<String, Object> parsedMap = DataPackageUtils.parse(msg);
+		//String dataTime = (String)parsedMap.get("DataTime"); //数据时间
+		//String cn = (String)parsedMap.get("CN"); //命令编码
 		
 		HttpClient httpclient = HttpClients.custom().build();
 		HttpPost httpPost = new HttpPost("http://localhost:" + webPort + "/dataCenter/resolve"); //解析实时数据

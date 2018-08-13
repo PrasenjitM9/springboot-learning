@@ -1,7 +1,6 @@
 package cn.bocon.server.web;
 
 import java.io.File;
-import java.util.Map;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

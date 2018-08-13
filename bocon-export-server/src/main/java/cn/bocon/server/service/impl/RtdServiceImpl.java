@@ -8,6 +8,7 @@ import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,12 +20,15 @@ import cn.bocon.server.common.DataPackageUtils;
 import cn.bocon.server.common.DateUtils;
 import cn.bocon.server.common.RegexUtils;
 import cn.bocon.server.common.StringUtils;
+import cn.bocon.server.service.IPollantinfoService;
 import cn.bocon.server.service.IResolveService;
 import cn.bocon.server.service.IRtdService;
 
 @Service
 public class RtdServiceImpl implements IRtdService, IResolveService {
 	private Logger logger = LoggerFactory.getLogger(RtdServiceImpl.class);
+	@Autowired
+	private IPollantinfoService pollantinfoService;
 
 	@Transactional
 	public void resolve(String msg) {
@@ -74,15 +78,7 @@ public class RtdServiceImpl implements IRtdService, IResolveService {
 		System.out.println(sb.toString());
 
 		try {
-			Map<String, String> polMap = Maps.newHashMap();
-			File directory = new File("");//设定为当前文件夹 
-			File f = new File(directory.getAbsolutePath() + "\\pollantinfo.txt"); //获取绝对路径 
-			List<String> readLines = Files.readLines(f, Charset.forName("UTF-8"));
-			for (int i = 0; i < readLines.size(); i++) {
-				String temp = readLines.get(i);
-				String[] arr = temp.split(",");
-				polMap.put(arr[0], arr[1]);
-			}
+			Map<String, String> polMap = pollantinfoService.getPollantinfo();
 			File file = new File("d:\\rtd_data.csv");
 			if (!file.exists()) {
 				file.createNewFile();

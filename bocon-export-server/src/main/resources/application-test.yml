@@ -69,4 +69,3 @@ bocon:
   checkCrc: 1
 #接收端口
   port: 15000
-  checkValidDate: 1

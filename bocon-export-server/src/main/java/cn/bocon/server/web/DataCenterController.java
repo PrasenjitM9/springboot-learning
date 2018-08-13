@@ -1,6 +1,5 @@
 package cn.bocon.server.web;
 
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Map;
 
@@ -22,21 +21,28 @@ import cn.bocon.server.common.DataPackageUtils;
 import cn.bocon.server.common.DateUtils;
 import cn.bocon.server.common.RegexUtils;
 import cn.bocon.server.service.IHisService;
+import cn.bocon.server.service.IMonthDataService;
 import cn.bocon.server.service.IResolveService;
 import cn.bocon.server.service.IRtdService;
 
+/**
+ * 数据中心控制器
+ * @author wangjian
+ *
+ */
 @RestController
 @RequestMapping("/dataCenter")
 public class DataCenterController {
 	private Logger logger = LoggerFactory.getLogger(DataCenterController.class);
+	@Value("${bocon.checkCrc}")
+	private String checkCrc;
+	
 	@Autowired
 	private IRtdService rtdService;	
 	@Autowired
 	private IHisService hisService;
-	@Value("${bocon.checkCrc}")
-	private String checkCrc;
-	@Value("${bocon.checkValidDate}")
-	private String checkValidDate;
+	@Autowired
+	private IMonthDataService monthDataService;
 
 	// 解析实时数据
 	@RequestMapping(value = "resolve", method = RequestMethod.POST)
@@ -48,14 +54,6 @@ public class DataCenterController {
 		Constants.dataPackages.add(map);
 		if (Constants.dataPackages.size() > 100) {
 			Constants.dataPackages.remove(0);
-		}
-		if ("1".equals(checkValidDate)) { //校验有效期
-			Date now = new Date();
-			Calendar calendar = Calendar.getInstance();
-			calendar.set(2018, 4, 10);
-			if (now.after(calendar.getTime())) {
-				return "";
-			}
 		}
 		Preconditions.checkNotNull(msg, "数据报文应不为空");
 		IResolveService resolveService = null;
@@ -94,7 +92,9 @@ public class DataCenterController {
 			case "2031":
 				resolveService = hisService; //日数据
 				break;				
-	
+			case "2081":
+				resolveService = monthDataService; //月数据
+				break;	
 			default:
 				break;
 		}
