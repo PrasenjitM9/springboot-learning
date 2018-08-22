@@ -147,7 +147,7 @@ public class HisServiceImpl implements IHisService {
 			if (StringUtils.isNotEmpty(polName)) {
 				sbHead.append(polName);
 			} else {
-				sbHead.append("");
+				sbHead.append(polCode);
 			}
 			
 			if (polCode.contains("Z")) {

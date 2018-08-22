@@ -22,4 +22,4 @@ logging:
 bocon:
   checkCrc: 1
 #接收端口
-  port: 7005
+  port: 12345

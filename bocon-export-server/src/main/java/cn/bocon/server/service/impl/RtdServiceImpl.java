@@ -114,7 +114,10 @@ public class RtdServiceImpl implements IRtdService {
 		for (int i = 0; i < polList.size(); i++) {
 			String polCode = polList.get(i);
 			String polName = polMap.get(polCode);
-			sbHead.append(StringUtils.replaceEmpty(polName));
+			if (StringUtils.isEmpty(polName)) {
+				polName = polCode;
+			}
+			sbHead.append(polName);
 			
 			if (i != polList.size() - 1) {
 				sbHead.append(",");
