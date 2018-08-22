@@ -18,6 +18,8 @@ public class Constants {
 	
 	//保存数据包
 	public static List<Map<String, String>> dataPackages = Lists.newArrayList();
+	
+	public static final String TAIL = "\r\n"; //回车换行
 
 	public static void addOnlines(String sessionId, String pointnum) {
 		onlines.put(sessionId, pointnum);

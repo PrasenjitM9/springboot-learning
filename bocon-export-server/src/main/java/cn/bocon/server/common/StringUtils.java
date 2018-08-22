@@ -19,6 +19,23 @@ import java.util.regex.Pattern;
 public class StringUtils {
 	
 	/**
+	 * 替换空字符
+	 * 
+	 * @param src
+	 * @return
+	 */
+	public static String replaceEmpty(String src) {
+		if (null == src || "".equals(src))
+			return "";
+		else {
+			if ("NULL".equals(src.trim().toUpperCase()))
+				return "";
+			return src.trim();
+		}
+
+	}
+	
+	/**
 	 * 
 	* @Title: isNumeric
 	* @Description: TODO(判断字符串是否存在数字)

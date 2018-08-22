@@ -21,7 +21,6 @@ import cn.bocon.server.common.DataPackageUtils;
 import cn.bocon.server.common.DateUtils;
 import cn.bocon.server.common.RegexUtils;
 import cn.bocon.server.service.IHisService;
-import cn.bocon.server.service.IMonthDataService;
 import cn.bocon.server.service.IResolveService;
 import cn.bocon.server.service.IRtdService;
 
@@ -41,8 +40,6 @@ public class DataCenterController {
 	private IRtdService rtdService;	
 	@Autowired
 	private IHisService hisService;
-	@Autowired
-	private IMonthDataService monthDataService;
 
 	// 解析实时数据
 	@RequestMapping(value = "resolve", method = RequestMethod.POST)
@@ -93,7 +90,7 @@ public class DataCenterController {
 				resolveService = hisService; //日数据
 				break;				
 			case "2081":
-				resolveService = monthDataService; //月数据
+				resolveService = hisService; //月数据
 				break;	
 			default:
 				break;
