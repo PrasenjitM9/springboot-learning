@@ -60,7 +60,9 @@ public class NettyServerApplication implements CommandLineRunner{
 		list.add("D:\\rtd_data.csv");
 		list.add("D:\\minute_data.csv");
 		list.add("D:\\hour_data.csv");
+		list.add("D:\\day_data.csv");
 		list.add("D:\\month_data.csv");
+		
 		for (String path : list) {
 			File file = new File(path);
 			if (file.exists()) {
