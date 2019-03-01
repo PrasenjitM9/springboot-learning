@@ -48,7 +48,8 @@ public class IndexController {
 
 	/**
 	 * 处理excel
-	 * 
+	 * 1 打开人事给的excel文档，，全选，复制保存在d盘下面的test.txt文件中（只保留数据 最后一行和第一行去掉）
+	 * 2 点击导出博控考勤记录
 	 * @return
 	 */
 	@RequestMapping(value = { "exportBocon"})
