@@ -73,6 +73,9 @@ public class SysAllHolidayServiceImpl extends ServiceImpl<SysAllHolidayMapper, S
         holidays.add(new SysAllHoliday("清明节", "2019-04-07"));   
         
         holidays.add(new SysAllHoliday("劳动节", "2019-05-01"));
+        holidays.add(new SysAllHoliday("劳动节", "2019-05-02"));
+        holidays.add(new SysAllHoliday("劳动节", "2019-05-03"));     
+        holidays.add(new SysAllHoliday("劳动节", "2019-05-04"));           
         
         holidays.add(new SysAllHoliday("端午节", "2019-06-07"));
         holidays.add(new SysAllHoliday("端午节", "2019-06-08"));
@@ -103,6 +106,9 @@ public class SysAllHolidayServiceImpl extends ServiceImpl<SysAllHolidayMapper, S
         
         //-------------- 剔除补班时间(周末需要补班的)---------------------
         List<SysAllHoliday> workDays = new ArrayList<SysAllHoliday>();
+        
+        workDays.add(new SysAllHoliday("补班", "2019-04-28")); //补五一 星期日
+        workDays.add(new SysAllHoliday("补班", "2019-05-05")); //补五一 星期日
         
         workDays.add(new SysAllHoliday("补班", "2019-09-29")); //补国庆
         workDays.add(new SysAllHoliday("补班", "2019-10-12")); //补国庆
