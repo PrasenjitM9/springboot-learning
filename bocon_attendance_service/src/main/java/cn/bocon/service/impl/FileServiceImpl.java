@@ -234,7 +234,7 @@ public class FileServiceImpl implements IFileService {
 						long minute2 = DateUtil.getMinDistanceTimes(workEndTime, wholeEnd);
 		    			if (minute2 > 0) { //早退
 		    				resultMap.put("status", "5"); //早退
-		    				resultMap.put("earlyMinute", Math.abs(minute)); //早退
+		    				resultMap.put("earlyMinute", Math.abs(minute2)); //早退
 		    				resultMap.put("earlyDate", bDate); //早退日期
 		    			}						
 					}
