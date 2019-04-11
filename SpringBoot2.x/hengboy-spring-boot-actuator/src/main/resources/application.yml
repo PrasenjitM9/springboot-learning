@@ -1,0 +1,33 @@
+# 系统名称
+spring:
+  application:
+    name: hengboy-spring-boot-actuator
+
+# 管理节点配置
+management:
+  endpoints:
+    web:
+      # actuator的前缀地址
+      base-path: /
+      # 开放指定节点
+      exposure:
+        include:
+          - health
+          - info
+          - mappings
+          - env
+          - shutdown
+      # 自定义路径映射
+      path-mapping:
+        # key=>value形式，原映射路径=>新映射路径
+        health: healthcheck
+  # 显示详细健康信息
+  endpoint:
+    health:
+      show-details: always
+    # 开启远程关闭服务
+    shutdown:
+      enabled: true
+  # 修改监控服务端的端口号
+  server:
+    port: 8001
