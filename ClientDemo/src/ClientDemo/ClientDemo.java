@@ -31,8 +31,6 @@ import java.util.Date;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.io.UnsupportedEncodingException;
-
 import javax.swing.JPopupMenu;
 import javax.swing.JWindow;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -46,8 +44,6 @@ import javax.swing.tree.TreePath;
  ****************************************************************************/
 public class ClientDemo extends javax.swing.JFrame
 {
-	
-	
     /*************************************************
     函数:      主类构造函数
     函数描述:	初始化成员
@@ -65,44 +61,6 @@ public class ClientDemo extends javax.swing.JFrame
         fMSFCallBack = null;
         fRealDataCallBack= new FRealDataCallBack();
         m_iTreeNodeNum = 0;
-        
-        //注册
-        jButtonLogin.doClick();
-        //预览
-        jButtonRealPlay.doClick();
-        
-        //叠加字符
-        HCNetSDK.NET_DVR_SHOWSTRING_V30 m_strShowString = new HCNetSDK.NET_DVR_SHOWSTRING_V30();//叠加字符结构体
-        IntByReference ibrBytesReturned = new IntByReference(0);//获取显示字符参数
-        m_strShowString.write();
-        Pointer lpStringConfig = m_strShowString.getPointer();
-        boolean getDVRConfigSuc = hCNetSDK.NET_DVR_GetDVRConfig(lUserID, HCNetSDK.NET_DVR_GET_SHOWSTRING_V30,
-                new NativeLong(1), lpStringConfig, m_strShowString.size(), ibrBytesReturned);
-        m_strShowString.read();        
-        
-        m_strShowString.struStringInfo[0].wShowString = (short)1;
-        try {
-			m_strShowString.struStringInfo[0].sString ="中国人民共和国中国人民共和国中国".getBytes("GB2312");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-        m_strShowString.struStringInfo[0].wStringSize = (short) 40;
-        m_strShowString.struStringInfo[0].wShowStringTopLeftY = (short) 64;
-        m_strShowString.struStringInfo[0].wShowStringTopLeftX = (short) 0;    
-        
-        m_strShowString.write();
-        Pointer lpShowString = m_strShowString.getPointer();
-        boolean setDVRConfigSuc = hCNetSDK.NET_DVR_SetDVRConfig(lUserID, HCNetSDK.NET_DVR_SET_SHOWSTRING_V30,
-                new NativeLong(1), lpShowString, m_strShowString.size());
-        m_strShowString.read();
-        if (setDVRConfigSuc == false)
-        {
-            JOptionPane.showMessageDialog(this, "设置显示字符参数失败");
-            System.out.print("" + hCNetSDK.NET_DVR_GetLastError());
-        } else
-        {
-            JOptionPane.showMessageDialog(this, "设置显示字符参数成功");
-        }        
     }
 
     static HCNetSDK hCNetSDK = HCNetSDK.INSTANCE;
@@ -216,13 +174,13 @@ public class ClientDemo extends javax.swing.JFrame
 
         jTextFieldPortNumber.setText("8000");
 
-        jTextFieldIPAddress.setText("192.168.1.64");
+        jTextFieldIPAddress.setText("172.4.1.170");
 
         jLabelPortNumber.setText("端口");
 
         jLabelPassWord.setText("密码");
 
-        jPasswordFieldPassword.setText("bocon123456");
+        jPasswordFieldPassword.setText("12345");
 
         jTextFieldUserName.setText("admin");
 

@@ -1979,7 +1979,7 @@ public static class NET_DVR_SHOWSTRINGINFO extends Structure {//单字符参数(
 	public short wStringSize;				/* 该行字符的长度，不能大于44个字符 */
 	public short wShowStringTopLeftX;		/* 字符显示位置的x坐标 */
 	public short wShowStringTopLeftY;		/* 字符名称显示位置的y坐标 */
-	public byte[] sString = new byte[1000];				/* 要显示的字符内容 */
+	public byte[] sString = new byte[44];				/* 要显示的字符内容 */
 }
 
 //叠加字符(9000扩展)
@@ -3060,7 +3060,7 @@ public static class RECV_ALARM extends Structure{
 //播放库函数声明,PlayCtrl.dll
 interface PlayCtrl extends StdCallLibrary
 {
-    PlayCtrl INSTANCE = (PlayCtrl) Native.loadLibrary("..\\PlayCtrl",
+    PlayCtrl INSTANCE = (PlayCtrl) Native.loadLibrary("PlayCtrl",
             PlayCtrl.class);
 
     public static final int STREAME_REALTIME = 0;
@@ -3079,7 +3079,7 @@ interface PlayCtrl extends StdCallLibrary
 //windows gdi接口,gdi32.dll in system32 folder, 在设置遮挡区域,移动侦测区域等情况下使用
 interface GDI32 extends W32API
 {
-    GDI32 INSTANCE = (GDI32) Native.loadLibrary(".\\gdi32", GDI32.class, DEFAULT_OPTIONS);
+    GDI32 INSTANCE = (GDI32) Native.loadLibrary("gdi32", GDI32.class, DEFAULT_OPTIONS);
 
     public static final int TRANSPARENT = 1;
 
@@ -3092,7 +3092,7 @@ interface GDI32 extends W32API
 interface USER32 extends W32API
 {
 
-    USER32 INSTANCE = (USER32) Native.loadLibrary(".\\user32", USER32.class, DEFAULT_OPTIONS);
+    USER32 INSTANCE = (USER32) Native.loadLibrary("user32", USER32.class, DEFAULT_OPTIONS);
 
     public static final int BF_LEFT = 0x0001;
     public static final int BF_TOP = 0x0002;
