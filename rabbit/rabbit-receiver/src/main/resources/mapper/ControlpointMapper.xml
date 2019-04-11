@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bocon.mapper.ControlpointMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="cn.bocon.entity.Controlpoint">
+		<id column="id" property="id" />
+		<result column="point_name" property="pointName" />
+		<result column="mnnum" property="mnnum" />
+		<result column="operator" property="operator" />
+		<result column="longitude" property="longitude" />
+		<result column="latitude" property="latitude" />
+		<result column="mark" property="mark" />
+		<result column="contains_cod" property="containsCod" />
+		<result column="rtdtablename" property="rtdtablename" />
+		<result column="histablename" property="histablename" />
+		<result column="acceptance" property="acceptance" />
+		<result column="communication_mode" property="communicationMode" />
+		<result column="cardno" property="cardno" />
+		<result column="pointtypeid" property="pointtypeid" />
+		<result column="monitortype" property="monitortype" />
+		<result column="create_time" property="createTime" />
+		<result column="updatetime" property="updatetime" />
+	</resultMap>
+
+</mapper>
